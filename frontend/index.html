@@ -1,0 +1,803 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>CardioAI | Heart Disease Analytics</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<div class="app">
+
+    <!-- SIDEBAR -->
+    <aside class="sidebar">
+
+        <div class="brand">
+            <div class="brand-icon">♥</div>
+            <div>
+                <h2>CardioAI</h2>
+                <span>ML Analytics Platform</span>
+            </div>
+        </div>
+
+        <nav class="navigation">
+
+            <p class="nav-label">WORKSPACE</p>
+
+            <button class="nav-item active"
+                    onclick="showSection('dashboard', this)">
+                <span>⌂</span>
+                Dashboard
+            </button>
+
+            <button class="nav-item"
+                    onclick="showSection('analysis', this)">
+                <span>◫</span>
+                Data Analysis
+            </button>
+
+            <button class="nav-item"
+                    onclick="showSection('model', this)">
+                <span>◎</span>
+                ML Model
+            </button>
+
+            <button class="nav-item"
+                    onclick="showSection('prediction', this)">
+                <span>♥</span>
+                Prediction
+            </button>
+
+            <p class="nav-label">PROJECT</p>
+
+            <button class="nav-item"
+                    onclick="showSection('about', this)">
+                <span>ⓘ</span>
+                Methodology
+            </button>
+
+        </nav>
+
+        <div class="sidebar-footer">
+            <div class="status-dot"></div>
+            <div>
+                <strong>System Online</strong>
+                <small>API Connected</small>
+            </div>
+        </div>
+
+    </aside>
+
+
+    <!-- MAIN -->
+    <main class="main">
+
+        <!-- TOPBAR -->
+        <header class="topbar">
+
+            <div>
+                <span class="eyebrow">HEART DISEASE CASE STUDY</span>
+                <h1 id="pageTitle">Analytics Dashboard</h1>
+            </div>
+
+            <div class="topbar-right">
+                <div class="api-status">
+                    <span></span>
+                    Backend Connected
+                </div>
+
+                <div class="avatar">AI</div>
+            </div>
+
+        </header>
+
+
+        <!-- ================= DASHBOARD ================= -->
+
+        <section id="dashboard" class="section active-section">
+
+            <div class="hero">
+
+                <div class="hero-content">
+
+                    <div class="hero-badge">
+                        MACHINE LEARNING • HEALTHCARE ANALYTICS
+                    </div>
+
+                    <h2>
+                        Intelligent Heart Disease
+                        <span>Analysis Platform</span>
+                    </h2>
+
+                    <p>
+                        Explore patient data, understand important health
+                        indicators, evaluate machine learning performance,
+                        and generate model-based predictions.
+                    </p>
+
+                    <button class="primary-btn"
+                            onclick="showSection('prediction', document.querySelectorAll('.nav-item')[3])">
+                        Start Prediction
+                        <span>→</span>
+                    </button>
+
+                </div>
+
+                <div class="hero-visual">
+
+                    <div class="heart-ring">
+                        <div class="pulse-heart">♥</div>
+                    </div>
+
+                    <div class="floating-card card-one">
+                        <span>Dataset</span>
+                        <strong id="heroRecords">303</strong>
+                        <small>records</small>
+                    </div>
+
+                    <div class="floating-card card-two">
+                        <span>Features</span>
+                        <strong id="heroFeatures">13</strong>
+                        <small>variables</small>
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- KPI CARDS -->
+
+            <div class="stats-grid">
+
+                <div class="stat-card">
+                    <div class="stat-icon blue">▦</div>
+                    <div>
+                        <span>Total Records</span>
+                        <strong id="totalRecords">—</strong>
+                        <small>Patient observations</small>
+                    </div>
+                </div>
+
+                <div class="stat-card">
+                    <div class="stat-icon purple">⌘</div>
+                    <div>
+                        <span>Input Features</span>
+                        <strong id="totalFeatures">—</strong>
+                        <small>Predictive variables</small>
+                    </div>
+                </div>
+
+                <div class="stat-card">
+                    <div class="stat-icon green">✓</div>
+                    <div>
+                        <span>Model Accuracy</span>
+                        <strong id="modelAccuracy">—</strong>
+                        <small>Test-set performance</small>
+                    </div>
+                </div>
+
+                <div class="stat-card">
+                    <div class="stat-icon orange">◉</div>
+                    <div>
+                        <span>Test Records</span>
+                        <strong id="testingRecords">—</strong>
+                        <small>Held-out observations</small>
+                    </div>
+                </div>
+
+            </div>
+
+
+            <!-- QUICK OVERVIEW -->
+
+            <div class="section-heading">
+                <div>
+                    <span class="eyebrow">PROJECT OVERVIEW</span>
+                    <h3>From Data to Prediction</h3>
+                </div>
+            </div>
+
+            <div class="process-grid">
+
+                <div class="process-card">
+                    <div class="process-number">01</div>
+                    <h4>Dataset</h4>
+                    <p>
+                        Analyze the heart disease dataset and understand
+                        its structure, variables and target distribution.
+                    </p>
+                </div>
+
+                <div class="process-card">
+                    <div class="process-number">02</div>
+                    <h4>Exploration</h4>
+                    <p>
+                        Study relationships between demographic,
+                        clinical and diagnostic variables.
+                    </p>
+                </div>
+
+                <div class="process-card">
+                    <div class="process-number">03</div>
+                    <h4>Machine Learning</h4>
+                    <p>
+                        Train a Random Forest classification model using
+                        the selected patient attributes.
+                    </p>
+                </div>
+
+                <div class="process-card">
+                    <div class="process-number">04</div>
+                    <h4>Prediction</h4>
+                    <p>
+                        Enter patient parameters and obtain the model's
+                        predicted class and probability estimate.
+                    </p>
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- ================= DATA ANALYSIS ================= -->
+
+        <section id="analysis" class="section">
+
+            <div class="page-intro">
+                <span class="eyebrow">EXPLORATORY DATA ANALYSIS</span>
+
+                <h2>Understand the Dataset</h2>
+
+                <p>
+                    Explore target distribution, age patterns, categorical
+                    relationships and feature correlations.
+                </p>
+            </div>
+
+
+            <div class="chart-grid">
+
+                <div class="chart-card large">
+                    <div class="chart-header">
+                        <div>
+                            <span>01</span>
+                            <h3>Target Distribution</h3>
+                        </div>
+                        <small>Target classes</small>
+                    </div>
+
+                    <div id="targetChart" class="chart-area"></div>
+                </div>
+
+
+                <div class="chart-card">
+                    <div class="chart-header">
+                        <div>
+                            <span>02</span>
+                            <h3>Age Distribution</h3>
+                        </div>
+                        <small>Patient age</small>
+                    </div>
+
+                    <div id="ageChart" class="chart-area"></div>
+                </div>
+
+
+                <div class="chart-card">
+                    <div class="chart-header">
+                        <div>
+                            <span>03</span>
+                            <h3>Sex vs Target</h3>
+                        </div>
+                        <small>Grouped comparison</small>
+                    </div>
+
+                    <div id="sexChart" class="chart-area"></div>
+                </div>
+
+
+                <div class="chart-card">
+                    <div class="chart-header">
+                        <div>
+                            <span>04</span>
+                            <h3>Chest Pain Type</h3>
+                        </div>
+                        <small>CP vs target</small>
+                    </div>
+
+                    <div id="cpChart" class="chart-area"></div>
+                </div>
+
+
+                <div class="chart-card large">
+                    <div class="chart-header">
+                        <div>
+                            <span>05</span>
+                            <h3>Correlation Matrix</h3>
+                        </div>
+                        <small>Feature relationships</small>
+                    </div>
+
+                    <div id="correlationChart"
+                         class="correlation-area"></div>
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- ================= MODEL ================= -->
+
+        <section id="model" class="section">
+
+            <div class="page-intro">
+
+                <span class="eyebrow">MACHINE LEARNING</span>
+
+                <h2>Model Performance</h2>
+
+                <p>
+                    Evaluation of the Random Forest classification model
+                    on unseen test data.
+                </p>
+
+            </div>
+
+
+            <div class="metric-grid">
+
+                <div class="metric-card">
+                    <span>Accuracy</span>
+                    <strong id="modelAccuracy2">—</strong>
+                    <small>Overall correctness</small>
+                </div>
+
+                <div class="metric-card">
+                    <span>Precision</span>
+                    <strong id="modelPrecision">—</strong>
+                    <small>Positive prediction precision</small>
+                </div>
+
+                <div class="metric-card">
+                    <span>Recall</span>
+                    <strong id="modelRecall">—</strong>
+                    <small>Positive class recall</small>
+                </div>
+
+                <div class="metric-card">
+                    <span>F1 Score</span>
+                    <strong id="modelF1">—</strong>
+                    <small>Balanced metric</small>
+                </div>
+
+            </div>
+
+
+            <div class="record-strip">
+
+                <div>
+                    <span>Training Records</span>
+                    <strong id="trainingRecords">—</strong>
+                </div>
+
+                <div>
+                    <span>Testing Records</span>
+                    <strong id="testingRecords2">—</strong>
+                </div>
+
+                <div>
+                    <span>Total Dataset</span>
+                    <strong id="totalRecords2">—</strong>
+                </div>
+
+                <div>
+                    <span>Features</span>
+                    <strong id="totalFeatures2">—</strong>
+                </div>
+
+            </div>
+
+
+            <div class="model-chart-grid">
+
+                <div class="chart-card">
+
+                    <div class="chart-header">
+                        <div>
+                            <span>01</span>
+                            <h3>Confusion Matrix</h3>
+                        </div>
+                    </div>
+
+                    <div id="confusionMatrix"
+                         class="confusion-container"></div>
+
+                </div>
+
+
+                <div class="chart-card">
+
+                    <div class="chart-header">
+                        <div>
+                            <span>02</span>
+                            <h3>Feature Importance</h3>
+                        </div>
+                    </div>
+
+                    <div id="featureImportance"
+                         class="importance-container"></div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- ================= PREDICTION ================= -->
+
+        <section id="prediction" class="section">
+
+            <div class="page-intro">
+
+                <span class="eyebrow">MODEL INFERENCE</span>
+
+                <h2>Heart Disease Prediction</h2>
+
+                <p>
+                    Enter the required patient attributes to generate
+                    a prediction from the trained machine learning model.
+                </p>
+
+            </div>
+
+
+            <div class="prediction-layout">
+
+                <div class="prediction-card">
+
+                    <div class="form-header">
+                        <div class="form-icon">♥</div>
+
+                        <div>
+                            <h3>Patient Information</h3>
+                            <p>Enter the 13 model input features.</p>
+                        </div>
+                    </div>
+
+
+                    <form id="predictionForm">
+
+                        <div class="form-grid">
+
+                            <div class="input-group">
+                                <label>Age</label>
+                                <input id="age"
+                                       type="number"
+                                       min="1"
+                                       max="120"
+                                       required>
+                            </div>
+
+                            <div class="input-group">
+                                <label>Sex</label>
+                                <select id="sex" required>
+                                    <option value="">Select</option>
+                                    <option value="1">Male</option>
+                                    <option value="0">Female</option>
+                                </select>
+                            </div>
+
+                            <div class="input-group">
+                                <label>Chest Pain Type</label>
+                                <select id="cp" required>
+                                    <option value="">Select</option>
+                                    <option value="0">Typical Angina</option>
+                                    <option value="1">Atypical Angina</option>
+                                    <option value="2">Non-anginal Pain</option>
+                                    <option value="3">Asymptomatic</option>
+                                </select>
+                            </div>
+
+                            <div class="input-group">
+                                <label>Resting Blood Pressure</label>
+                                <input id="trestbps"
+                                       type="number"
+                                       min="50"
+                                       max="250"
+                                       placeholder="e.g. 120"
+                                       required>
+                            </div>
+
+                            <div class="input-group">
+                                <label>Cholesterol</label>
+                                <input id="chol"
+                                       type="number"
+                                       min="50"
+                                       max="700"
+                                       placeholder="e.g. 200"
+                                       required>
+                            </div>
+
+                            <div class="input-group">
+                                <label>Fasting Blood Sugar</label>
+                                <select id="fbs" required>
+                                    <option value="">Select</option>
+                                    <option value="1">Greater than 120</option>
+                                    <option value="0">120 or less</option>
+                                </select>
+                            </div>
+
+                            <div class="input-group">
+                                <label>Resting ECG</label>
+                                <select id="restecg" required>
+                                    <option value="">Select</option>
+                                    <option value="0">Normal</option>
+                                    <option value="1">ST-T Abnormality</option>
+                                    <option value="2">LV Hypertrophy</option>
+                                </select>
+                            </div>
+
+                            <div class="input-group">
+                                <label>Maximum Heart Rate</label>
+                                <input id="thalach"
+                                       type="number"
+                                       min="50"
+                                       max="250"
+                                       placeholder="e.g. 150"
+                                       required>
+                            </div>
+
+                            <div class="input-group">
+                                <label>Exercise Induced Angina</label>
+                                <select id="exang" required>
+                                    <option value="">Select</option>
+                                    <option value="1">Yes</option>
+                                    <option value="0">No</option>
+                                </select>
+                            </div>
+
+                            <div class="input-group">
+                                <label>ST Depression</label>
+                                <input id="oldpeak"
+                                       type="number"
+                                       step="0.1"
+                                       min="0"
+                                       max="10"
+                                       placeholder="e.g. 1.0"
+                                       required>
+                            </div>
+
+                            <div class="input-group">
+                                <label>Slope</label>
+                                <select id="slope" required>
+                                    <option value="">Select</option>
+                                    <option value="0">Upsloping</option>
+                                    <option value="1">Flat</option>
+                                    <option value="2">Downsloping</option>
+                                </select>
+                            </div>
+
+                            <div class="input-group">
+                                <label>Number of Major Vessels</label>
+                                <select id="ca" required>
+                                    <option value="">Select</option>
+                                    <option value="0">0</option>
+                                    <option value="1">1</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                </select>
+                            </div>
+
+                            <div class="input-group">
+                                <label>Thalassemia</label>
+                                <select id="thal" required>
+                                    <option value="">Select</option>
+                                    <option value="0">Normal</option>
+                                    <option value="1">Fixed Defect</option>
+                                    <option value="2">Reversible Defect</option>
+                                    <option value="3">Other</option>
+                                </select>
+                            </div>
+
+                        </div>
+
+
+                        <button class="predict-btn"
+                                type="submit">
+
+                            <span>Run ML Prediction</span>
+                            <strong>→</strong>
+
+                        </button>
+
+                    </form>
+
+                </div>
+
+
+                <!-- RESULT -->
+
+                <div class="result-panel">
+
+                    <div class="result-placeholder" id="resultPlaceholder">
+
+                        <div class="result-symbol">✦</div>
+
+                        <h3>Prediction Result</h3>
+
+                        <p>
+                            Complete the patient form and run the model
+                            to see the prediction here.
+                        </p>
+
+                    </div>
+
+
+                    <div id="result"
+                         class="prediction-result"
+                         style="display:none;">
+
+                        <span class="result-label">
+                            MODEL OUTPUT
+                        </span>
+
+                        <div class="result-icon">♥</div>
+
+                        <h3 id="resultTitle">Prediction</h3>
+
+                        <p id="resultText"></p>
+
+                        <div class="probability">
+
+                            <div class="probability-header">
+                                <span>Estimated Probability</span>
+                                <strong id="probabilityValue">0%</strong>
+                            </div>
+
+                            <div class="progress">
+                                <div id="probabilityBar"></div>
+                            </div>
+
+                        </div>
+
+                        <div class="result-note">
+                            This result is generated by a machine learning
+                            model and is not a medical diagnosis.
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- ================= ABOUT ================= -->
+
+        <section id="about" class="section">
+
+            <div class="page-intro">
+
+                <span class="eyebrow">PROJECT METHODOLOGY</span>
+
+                <h2>How CardioAI Works</h2>
+
+                <p>
+                    A complete machine learning workflow from raw data
+                    to model-based inference.
+                </p>
+
+            </div>
+
+
+            <div class="methodology">
+
+                <div class="method-step">
+                    <div class="method-number">01</div>
+                    <div>
+                        <h3>Data Collection</h3>
+                        <p>
+                            The project uses a structured heart disease
+                            dataset containing clinical and demographic
+                            patient attributes.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="method-step">
+                    <div class="method-number">02</div>
+                    <div>
+                        <h3>Data Preparation</h3>
+                        <p>
+                            The dataset is loaded, checked for missing
+                            values and prepared for machine learning.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="method-step">
+                    <div class="method-number">03</div>
+                    <div>
+                        <h3>Feature Processing</h3>
+                        <p>
+                            The 13 independent variables are used as
+                            inputs to the classification pipeline.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="method-step">
+                    <div class="method-number">04</div>
+                    <div>
+                        <h3>Random Forest</h3>
+                        <p>
+                            A Random Forest classifier is trained using
+                            a stratified train-test split.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="method-step">
+                    <div class="method-number">05</div>
+                    <div>
+                        <h3>Evaluation</h3>
+                        <p>
+                            Accuracy, precision, recall, F1 score and
+                            confusion matrix are used to evaluate performance.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="method-step">
+                    <div class="method-number">06</div>
+                    <div>
+                        <h3>Inference</h3>
+                        <p>
+                            New patient attributes are passed through
+                            the trained pipeline to obtain a prediction.
+                        </p>
+                    </div>
+                </div>
+
+            </div>
+
+
+            <div class="disclaimer">
+
+                <div class="disclaimer-icon">!</div>
+
+                <div>
+                    <h3>Important Medical Disclaimer</h3>
+
+                    <p>
+                        This application is an educational machine learning
+                        case study. Its predictions are statistical outputs
+                        from a trained model and should not be interpreted
+                        as medical diagnosis, medical advice or a substitute
+                        for consultation with a qualified healthcare professional.
+                    </p>
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+</div>
+
+
+<script src="app.js"></script>
+
+</body>
+</html>
